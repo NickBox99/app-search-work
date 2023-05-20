@@ -25,7 +25,7 @@ namespace SearchWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var name = textBox1.Text;
+            var name = comboBox1.Text;
 
             if (name.Length == 0)
             {
