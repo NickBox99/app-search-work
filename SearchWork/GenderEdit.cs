@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SearchWork.Database;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,34 @@ namespace SearchWork
 {
     public partial class GenderEdit : Form
     {
-        public GenderEdit()
+        int _id;
+        public GenderEdit(int id)
         {
             InitializeComponent();
+            _id = id;
+
+            var result = GendersSql.get(id);
+            textBox1.Text = (string)result["name"];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var name = textBox1.Text;
+
+            if (name.Length == 0)
+            {
+                MessageBox.Show("Заполните поля");
+                return;
+            }
+
+            GendersSql.update(_id, name);
+            MessageBox.Show("Выполнено, обновите таблицу");
+            Close();
         }
     }
 }
