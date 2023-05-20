@@ -184,6 +184,9 @@
     <Compile Include="TypeOfApplicants.Designer.cs">
       <DependentUpon>TypeOfApplicants.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EmployerAdd.resx">
+      <DependentUpon>EmployerAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employers.resx">
       <DependentUpon>Employers.cs</DependentUpon>
     </EmbeddedResource>
