@@ -205,6 +205,9 @@
     <EmbeddedResource Include="MilitaryRegistrationAdd.resx">
       <DependentUpon>MilitaryRegistrationAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MilitaryRegistrationEdit.resx">
+      <DependentUpon>MilitaryRegistrationEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MilitaryRegistrations.resx">
       <DependentUpon>MilitaryRegistrations.cs</DependentUpon>
     </EmbeddedResource>
