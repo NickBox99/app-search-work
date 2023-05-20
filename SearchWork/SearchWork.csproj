@@ -187,6 +187,9 @@
     <EmbeddedResource Include="EmployerAdd.resx">
       <DependentUpon>EmployerAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployerEdit.resx">
+      <DependentUpon>EmployerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employers.resx">
       <DependentUpon>Employers.cs</DependentUpon>
     </EmbeddedResource>
