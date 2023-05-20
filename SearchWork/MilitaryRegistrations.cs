@@ -16,7 +16,7 @@ namespace SearchWork
         public MilitaryRegistrations()
         {
             InitializeComponent();
-            GendersSql.renderTable(dataGridView1);
+            MilitaryRegistrationsSql.renderTable(dataGridView1);
         }
 
         private int getRowSelectedId()
@@ -56,15 +56,15 @@ namespace SearchWork
 
             if (id != -1)
             {
-                GendersSql.delete(id);
-                GendersSql.renderTable(dataGridView1);
+                MilitaryRegistrationsSql.delete(id);
+                MilitaryRegistrationsSql.renderTable(dataGridView1);
                 MessageBox.Show("Удалено");
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            GendersSql.renderTable(dataGridView1);
+            MilitaryRegistrationsSql.renderTable(dataGridView1);
             MessageBox.Show("Обновлено");
         }
     }
