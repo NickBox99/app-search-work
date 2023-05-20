@@ -129,6 +129,9 @@
     <EmbeddedResource Include="Employers.resx">
       <DependentUpon>Employers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenderAdd.resx">
+      <DependentUpon>GenderAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Genders.resx">
       <DependentUpon>Genders.cs</DependentUpon>
     </EmbeddedResource>
