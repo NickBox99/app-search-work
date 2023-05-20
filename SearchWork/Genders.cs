@@ -21,7 +21,7 @@ namespace SearchWork
 
         private int getRowSelectedId()
         {
-            var value = dataGridView1.CurrentRow.Cells[0].Value;
+            var value = dataGridView1.CurrentRow?.Cells[0].Value;
 
             if (value != null)
             {
