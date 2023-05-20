@@ -16,7 +16,7 @@ namespace SearchWork
         public Employers()
         {
             InitializeComponent();
-            TypeOfApplicantsSql.renderTable(dataGridView1);
+            EmployersSql.renderTable(dataGridView1);
         }
 
         private int getRowSelectedId()
@@ -37,7 +37,7 @@ namespace SearchWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new TypeOfApplicantAdd().Show();
+            new EmployerAdd().Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace SearchWork
 
             if (id != -1)
             {
-                new TypeOfApplicantEdit(id).Show();
+                new EmployerEdit(id).Show();
             }
         }
 
@@ -56,15 +56,15 @@ namespace SearchWork
 
             if (id != -1)
             {
-                TypeOfApplicantsSql.delete(id);
-                TypeOfApplicantsSql.renderTable(dataGridView1);
+                EmployersSql.delete(id);
+                EmployersSql.renderTable(dataGridView1);
                 MessageBox.Show("Удалено");
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TypeOfApplicantsSql.renderTable(dataGridView1);
+            EmployersSql.renderTable(dataGridView1);
             MessageBox.Show("Обновлено");
         }
     }
