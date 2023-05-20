@@ -96,6 +96,8 @@
   <ItemGroup>
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\GendersSql.cs" />
+    <Compile Include="Database\MilitaryRegistrationsSql.cs" />
+    <Compile Include="Database\TypeOfApplicantsSql.cs" />
     <Compile Include="EmployerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
