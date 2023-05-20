@@ -21,5 +21,20 @@ namespace SearchWork
         {
             new Genders().Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new TypeOfApplicants().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new MilitaryRegistrations().Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Employers().Show();
+        }
     }
 }
