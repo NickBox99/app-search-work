@@ -220,6 +220,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TypeOfApplicantAdd.resx">
+      <DependentUpon>TypeOfApplicantAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeOfApplicantEdit.resx">
+      <DependentUpon>TypeOfApplicantEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TypeOfApplicants.resx">
       <DependentUpon>TypeOfApplicants.cs</DependentUpon>
     </EmbeddedResource>
