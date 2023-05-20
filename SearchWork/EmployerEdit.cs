@@ -43,15 +43,15 @@ namespace SearchWork
             var phone = textBox4.Text;
             var additionalInfo = textBox5.Text;
 
-            if (Regex.IsMatch(inn, @"^\d{20}$"))
+            if (!Regex.IsMatch(inn, @"^\d{20}$"))
             {
-                MessageBox.Show("Заполните поле: ИНН");
+                MessageBox.Show("Заполните поле: ИНН (20 цифр)");
                 return;
             }
 
-            if (Regex.IsMatch(phone, @"^\d{11}$"))
+            if (!Regex.IsMatch(phone, @"^\d{11}$"))
             {
-                MessageBox.Show("Заполните поле: Телефон");
+                MessageBox.Show("Заполните поле: Телефон (11 цифр)");
                 return;
             }
 
