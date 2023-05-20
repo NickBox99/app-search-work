@@ -18,7 +18,6 @@ namespace SearchWork
         public MilitaryRegistrationEdit(int id)
         {
             InitializeComponent();
-            _id = id;
 
             var result = MilitaryRegistrationsSql.get(id);
             comboBox1.Text = (string)result["name"];
