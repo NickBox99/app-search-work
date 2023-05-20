@@ -90,7 +90,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MilitaryRegistrationAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MilitaryRegistrationAdd";
+            this.Text = "Добавление воинского учета";
             this.ResumeLayout(false);
             this.PerformLayout();
 
