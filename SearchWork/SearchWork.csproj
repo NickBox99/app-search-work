@@ -52,6 +52,12 @@
     <Compile Include="EmployerAdd.Designer.cs">
       <DependentUpon>EmployerAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerEdit.Designer.cs">
+      <DependentUpon>EmployerEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenderAdd.cs">
       <SubType>Form</SubType>
     </Compile>
