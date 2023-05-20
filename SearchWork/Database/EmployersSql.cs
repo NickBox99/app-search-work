@@ -14,7 +14,7 @@ namespace SearchWork.Database
     {
         public static void renderTable(DataGridView dataGridView)
         {
-            Database.renderTable("genders", dataGridView);
+            Database.renderTable("employers", dataGridView);
         }
         private static Dictionary<string, object> getDataDictionary(string name, string inn, string status, string address, string phone, string additionalInfo)
         {
@@ -30,22 +30,22 @@ namespace SearchWork.Database
 
         public static void add(string name, string inn, string status, string address, string phone, string additionalInfo)
         {
-            Database.add("genders", getDataDictionary(name, inn, status, address, phone, additionalInfo));
+            Database.add("employers", getDataDictionary(name, inn, status, address, phone, additionalInfo));
         }
 
         public static void update(int id, string name, string inn, string status, string address, string phone, string additionalInfo)
         {
-            Database.update("genders", id, getDataDictionary(name, inn, status, address, phone, additionalInfo));
+            Database.update("employers", id, getDataDictionary(name, inn, status, address, phone, additionalInfo));
         }
 
         public static void delete(int id)
         {
-            Database.delete("genders", id);
+            Database.delete("employers", id);
         }
 
         public static Dictionary<string, object> get(int id)
         {
-            return Database.get("genders", id);
+            return Database.get("employers", id);
         }
     }
 }
