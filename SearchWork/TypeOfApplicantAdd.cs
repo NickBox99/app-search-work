@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchWork.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace SearchWork
         public TypeOfApplicantAdd()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var name = comboBox1.Text;
+
+            if (name.Length == 0)
+            {
+                MessageBox.Show("Заполните поля");
+                return;
+            }
+
+            TypeOfApplicantsSql.add(name);
+            MessageBox.Show("Выполнено, обновите таблицу");
+            Close();
         }
     }
 }
