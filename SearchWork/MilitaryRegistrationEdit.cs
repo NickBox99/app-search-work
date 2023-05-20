@@ -20,7 +20,7 @@ namespace SearchWork
             InitializeComponent();
             _id = id;
 
-            var result = GendersSql.get(id);
+            var result = MilitaryRegistrationsSql.get(id);
             comboBox1.Text = (string)result["name"];
             _id = id;
         }
