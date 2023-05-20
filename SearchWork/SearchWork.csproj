@@ -132,6 +132,9 @@
     <EmbeddedResource Include="GenderAdd.resx">
       <DependentUpon>GenderAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenderEdit.resx">
+      <DependentUpon>GenderEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Genders.resx">
       <DependentUpon>Genders.cs</DependentUpon>
     </EmbeddedResource>
