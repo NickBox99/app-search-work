@@ -17,9 +17,9 @@ namespace SearchWork.Database
         static NpgsqlConnection npgsqlConnection = null;
         static NpgsqlCommand npgsqlCommand = null;
         static NpgsqlDataReader npgsqlDataReader = null;
-        static public int authId;
+        static public string authLogin;
 
-        private static NpgsqlDataReader sendRequest(string query) {
+        public static NpgsqlDataReader sendRequest(string query) {
 
             if (npgsqlConnection != null)
             {
