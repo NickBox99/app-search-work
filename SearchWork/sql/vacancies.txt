@@ -1,0 +1,21 @@
+Зарплата,
+Возраст минимальный,
+Возраст максимальный,
+Требования,
+График работы,
+Статус вакансии,
+Доп. информация,
+
+
+
+CREATE TABLE vacancies (
+    id SERIAL PRIMARY KEY,
+    salary NUMERIC(10, 2),
+    min_age INTEGER,
+    max_age INTEGER,
+    requirements TEXT,
+    work_schedule TEXT,
+    vacancy_status TEXT,
+    additional_info TEXT,
+    employer_id INTEGER REFERENCES employers(id)
+);
