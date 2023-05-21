@@ -51,6 +51,19 @@ namespace SearchWork
                     MessageBox.Show("Соискатель уже зарегистрирован");
                 }
             }
+            else
+            {
+                var errorMessage = EmployersSql.init(login, password);
+
+                if (errorMessage == "Работодатель не найден")
+                {
+                    new EmployerRegistration(login, password).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Работодатель уже зарегистрирован");
+                }
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -80,6 +93,20 @@ namespace SearchWork
                 {
                     Database.Database.authLogin = login;
                     new UserMenu().Show();
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
+            }
+            else
+            {
+                var errorMessage = EmployersSql.init(login, password);
+
+                if (errorMessage.Length == 0)
+                {
+                    Database.Database.authLogin = login;
+                    new EmployerMenu().Show();
                 }
                 else
                 {

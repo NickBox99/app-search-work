@@ -99,7 +99,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(249, 20);
             this.textBox1.TabIndex = 31;
-            this.textBox1.Text = "wASASDASDASDASD";
             // 
             // label2
             // 
@@ -117,7 +116,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 20);
             this.textBox2.TabIndex = 33;
-            this.textBox2.Text = "assaddassdadas";
             // 
             // label3
             // 
@@ -135,7 +133,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(249, 20);
             this.textBox3.TabIndex = 35;
-            this.textBox3.Text = "12312312311";
             // 
             // label4
             // 
@@ -279,7 +276,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(249, 21);
             this.comboBox3.TabIndex = 48;
-            this.comboBox3.Text = "вфывыыв";
             // 
             // numericUpDown1
             // 
@@ -292,11 +288,6 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(249, 20);
             this.numericUpDown1.TabIndex = 49;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
             // 
             // comboBox4
             // 
@@ -331,7 +322,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(249, 20);
             this.textBox4.TabIndex = 53;
-            this.textBox4.Text = "ывффывывф";
             // 
             // UserRegistration
             // 
