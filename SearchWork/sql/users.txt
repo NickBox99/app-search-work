@@ -20,27 +20,3 @@ CREATE TABLE users_auth (
     login VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL
 );
-
-
-
-postgresql. 
-1) напиши запрос на создание таблицы users с полями: ФИО, Дата рождения, Адрес, Телефон, Опыт работы, Резюме, Образование, Зарплата, Должность, Пол(связь с таблицей genders), Воинский учет(связь с таблицей genders123), Вид соискательства(связь с таблицей genders321)
-2) напиши запрос на создание таблицы users_auth с полями: логин, пароль.
-3) необходимо связать таблицы users, users_auth  один к одному
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE ManagerAuth (
-    id SERIAL PRIMARY KEY,
-    manager_id INTEGER REFERENCES Managers(id),
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
-);
