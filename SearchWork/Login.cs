@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchWork.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,8 +36,20 @@ namespace SearchWork
                 return;
             }
 
-            if(type == "Соискатель") {
-                new UserRegistration(login, password).Show();
+            var isUser = type == "Соискатель";
+
+            if (isUser)
+            {
+                var errorMessage = UsersSql.init(login, password);
+
+                if (errorMessage == "Соискатель не найден")
+                {
+                    new UserRegistration(login, password).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Соискатель уже зарегистрирован");
+                }
             }
         }
 
@@ -44,10 +57,34 @@ namespace SearchWork
         {
             var login = textBox1.Text;
             var password = textBox2.Text;
+            var type = comboBox1.Text;
 
             if (login.Length == 0 || password.Length == 0) {
                 MessageBox.Show("Заполните поля");
                 return;
+            }
+
+            if (type.Length == 0)
+            {
+                MessageBox.Show("Выберите тип регистрации");
+                return;
+            }
+
+            var isUser = type == "Соискатель";
+
+            if (isUser)
+            {
+                var errorMessage = UsersSql.init(login, password);
+
+                if (errorMessage.Length == 0)
+                {
+                    Database.Database.authLogin = login;
+                    new UserMenu().Show();
+                }
+                else
+                {
+                    MessageBox.Show(errorMessage);
+                }
             }
         }
     }
