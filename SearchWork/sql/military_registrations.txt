@@ -1,0 +1,4 @@
+CREATE TABLE military_registrations (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+);
