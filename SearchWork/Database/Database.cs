@@ -19,15 +19,12 @@ namespace SearchWork.Database
         static NpgsqlDataReader npgsqlDataReader = null;
         static public int authId;
 
-        private static NpgsqlDataReader sendRequest(string query, bool isNeedCloseConnection = true) {
+        private static NpgsqlDataReader sendRequest(string query) {
 
-            if (isNeedCloseConnection)
+            if (npgsqlConnection != null)
             {
-                if (npgsqlConnection != null)
-                {
-                    npgsqlCommand.Dispose();
-                    npgsqlConnection.Close();
-                }
+                npgsqlCommand.Dispose();
+                npgsqlConnection.Close();
             }
 
             npgsqlConnection = new NpgsqlConnection("Server=localhost;Port=5432;Database=SearchWork;User Id=postgres;Password=root;");
