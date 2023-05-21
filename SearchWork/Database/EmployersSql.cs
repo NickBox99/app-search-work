@@ -33,11 +33,6 @@ namespace SearchWork.Database
             Database.add("employers", getDataDictionary(name, inn, status, address, phone, additionalInfo));
         }
 
-        public static void update(int id, string name, string inn, string status, string address, string phone, string additionalInfo)
-        {
-            Database.update("employers", id, getDataDictionary(name, inn, status, address, phone, additionalInfo));
-        }
-
         public static void delete(int id)
         {
             Database.delete("employers", id);
@@ -46,6 +41,70 @@ namespace SearchWork.Database
         public static Dictionary<string, object> get(int id)
         {
             return Database.get("employers", id);
+        }
+
+        public static void update(int id, string name, string inn, string status, string address, string phone, string additionalInfo)
+        {
+            Database.update("employers", id, getDataDictionary(name, inn, status, address, phone, additionalInfo));
+        }
+
+        static public void create(string login, string password, string name, string inn, string status, string address, string phone, string additionalInfo)
+        {
+            var userData = getDataDictionary(name, inn, status, address, phone, additionalInfo);
+
+            var authData = new Dictionary<string, object>()
+            {
+                { "employer_id", Database.add("employers", userData) },
+                { "login", login },
+                { "password", password }
+            };
+
+            Database.add("employers_auth", authData);
+
+            Database.authLogin = login;
+        }
+        static public Dictionary<string, object> get(string login)
+        {
+            var reader = Database.sendRequest($"select ea.login, ea.password, e.id, e.name, e.inn, e.status, e.address, e.phone, e.additional_info FROM employers_auth ea JOIN employers e ON ea.employer_id = e.id WHERE ea.login = '{login}'");
+
+            Dictionary<string, object> data = new Dictionary<string, object>();
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    string columnName = reader.GetName(i);
+                    object value = reader.GetValue(i);
+
+                    if (value != null && value != DBNull.Value)
+                    {
+                        data.Add(columnName, value);
+                    }
+                }
+            }
+
+            return data;
+        }
+
+        static public string init(string login, string password)
+        {
+            var result = "";
+
+            var user = get(login);
+
+            if (user.Count != 0)
+            {
+                if ((string)user["password"] != password)
+                {
+                    result = "Пароль неверный";
+                }
+            }
+            else
+            {
+                result = "Работодатель не найден";
+            }
+
+            return result;
         }
     }
 }
