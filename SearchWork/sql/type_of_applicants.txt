@@ -1,0 +1,4 @@
+CREATE TABLE type_of_applicants (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+);
