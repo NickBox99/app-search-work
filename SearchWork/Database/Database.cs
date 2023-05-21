@@ -46,12 +46,17 @@ namespace SearchWork.Database
         {
             var result = sendRequest($"select * from {nameTable}");
 
+            renderTable(result, dataGridView);
+        }
+
+        public static void renderTable(NpgsqlDataReader result, DataGridView dataGridView)
+        {
+            dataGridView.Rows.Clear();
+
             if (result.HasRows)
             {
                 DataTable dt = new DataTable();
                 dt.Load(result);
-
-                dataGridView.Rows.Clear();
 
                 foreach (DataRow row in dt.Rows)
                 {
