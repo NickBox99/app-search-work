@@ -94,6 +94,7 @@ namespace SearchWork.Database
             comboBox.DataSource = items;
             comboBox.DisplayMember = "Value";
             comboBox.ValueMember = "Key";
+            comboBox.SelectedValue = "";
         }
 
         public static Dictionary<string, object> get(string nameTable, int id) {
@@ -160,7 +161,7 @@ namespace SearchWork.Database
                 var key = data.Keys.ElementAt(i);
                 object value = data[key];
 
-                query += $"{ key } = " + (value is string ? $"'{value}'" : value);
+                query += $"{ key } = " + ((value is string || value is DateTime) ? $"'{value}'" : value);
 
 
                 if (i < lastIndex)
