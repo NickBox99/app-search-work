@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,12 +17,17 @@ namespace SearchWork.Database
         static NpgsqlConnection npgsqlConnection = null;
         static NpgsqlCommand npgsqlCommand = null;
         static NpgsqlDataReader npgsqlDataReader = null;
+        static public int authId;
 
-        private static NpgsqlDataReader sendRequest(string query) {
-            if(npgsqlConnection != null)
+        private static NpgsqlDataReader sendRequest(string query, bool isNeedCloseConnection = true) {
+
+            if (isNeedCloseConnection)
             {
-                npgsqlCommand.Dispose();
-                npgsqlConnection.Close();
+                if (npgsqlConnection != null)
+                {
+                    npgsqlCommand.Dispose();
+                    npgsqlConnection.Close();
+                }
             }
 
             npgsqlConnection = new NpgsqlConnection("Server=localhost;Port=5432;Database=SearchWork;User Id=postgres;Password=root;");
@@ -71,6 +77,28 @@ namespace SearchWork.Database
             }
         }
 
+        public static void renderCombobox(ComboBox comboBox, string nameTable, string displayKey)
+        {
+            List<KeyValueItem> items = new List<KeyValueItem>();
+
+            var result = sendRequest($"select id, {displayKey} from {nameTable}");
+
+            if (result.HasRows)
+            {
+                DataTable dt = new DataTable();
+                dt.Load(result);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    items.Add(new KeyValueItem((int)row[0], (string)row[1]));
+                }
+            }
+
+            comboBox.DataSource = items;
+            comboBox.DisplayMember = "Value";
+            comboBox.ValueMember = "Key";
+        }
+
         public static Dictionary<string, object> get(string nameTable, int id) {
             var reader = sendRequest($"select * from {nameTable} WHERE id = {id};");
 
@@ -93,7 +121,7 @@ namespace SearchWork.Database
             return data;
         }
 
-        public static void add(string nameTable, Dictionary<string, object> data) {
+        public static int add(string nameTable, Dictionary<string, object> data) {
             var keysStr = "";
             var valueStr = "";
             var size = data.Count;
@@ -103,7 +131,7 @@ namespace SearchWork.Database
                 var key = data.Keys.ElementAt(i);
                 object value = data[key];
 
-                valueStr += value is string ? $"'{value}'" : value;
+                valueStr += (value is string || value is DateTime) ? $"'{value}'" : value;
                 keysStr += key;
 
                 if (i < lastIndex)
@@ -114,6 +142,15 @@ namespace SearchWork.Database
             }
 
             sendRequest($"INSERT INTO {nameTable} ({keysStr}) VALUES ({valueStr});");
+
+            npgsqlDataReader.Close();
+
+            var command = new NpgsqlCommand();
+            command.Connection = npgsqlConnection;
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT LASTVAL();";
+
+            return Convert.ToInt32(command.ExecuteScalar());
         }
 
         public static void update(string nameTable, int id, Dictionary<string, object> data) {
