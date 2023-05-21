@@ -1,0 +1,5 @@
+CREATE TABLE responses (
+    id SERIAL PRIMARY KEY,
+    vacancies_id INTEGER REFERENCES vacancies(id),
+    user_id INTEGER REFERENCES users(id)
+);
