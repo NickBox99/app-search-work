@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using Npgsql;
+using System.Data;
 
 namespace SearchWork.Database
 {
@@ -39,7 +41,34 @@ namespace SearchWork.Database
                 { "password", password }
             };
 
-            Database.authId = Database.add("users_auth", authData);
+            Database.add("users_auth", authData);
+
+            Database.authLogin = login;
+        }
+
+        static public NpgsqlDataReader get(string login)
+        {
+            return Database.sendRequest($"select * from users_auth WHERE login = '{login}'");
+        }
+
+        static public string init(string login, string password) {
+            var result = "";
+
+            var user = get(login);
+
+            if (user.Read())
+            {
+                if (user.GetString(3) != password)
+                {
+                    result = "Пароль неверный";
+                }
+            }
+            else
+            {
+                result = "Соискатель не найден";
+            }
+
+            return result;
         }
     }
 }
