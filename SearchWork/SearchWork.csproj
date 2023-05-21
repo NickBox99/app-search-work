@@ -112,6 +112,24 @@
     <Compile Include="EmployerEdit.Designer.cs">
       <DependentUpon>EmployerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerMenu.Designer.cs">
+      <DependentUpon>EmployerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerProfile.Designer.cs">
+      <DependentUpon>EmployerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployerRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployerRegistration.Designer.cs">
+      <DependentUpon>EmployerRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +228,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployerEdit.resx">
       <DependentUpon>EmployerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerMenu.resx">
+      <DependentUpon>EmployerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerProfile.resx">
+      <DependentUpon>EmployerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployerRegistration.resx">
+      <DependentUpon>EmployerRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employers.resx">
       <DependentUpon>Employers.cs</DependentUpon>
