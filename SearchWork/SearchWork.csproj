@@ -99,6 +99,7 @@
     <Compile Include="Database\GendersSql.cs" />
     <Compile Include="Database\MilitaryRegistrationsSql.cs" />
     <Compile Include="Database\TypeOfApplicantsSql.cs" />
+    <Compile Include="Database\UsersSql.cs" />
     <Compile Include="EmployerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +136,7 @@
     <Compile Include="Genders.Designer.cs">
       <DependentUpon>Genders.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeyValueItem.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
