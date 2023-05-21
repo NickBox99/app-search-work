@@ -7,3 +7,10 @@ CREATE TABLE employers (
     phone VARCHAR(11),
     additional_info TEXT
 );
+
+CREATE TABLE employers_auth (
+    id SERIAL PRIMARY KEY,
+    employer_id INTEGER REFERENCES employers(id),
+    login VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
+);
