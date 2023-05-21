@@ -1,13 +1,13 @@
-#Project name: SearchWork
+# Project name: SearchWork
 SearchWork is a powerful search application developed in C# with Windows Forms that utilizes the PostgreSql database. This README file provides an overview of the application, its features, and instructions for installation and usage.
 
-##Features
+## Features
 - SearchWork allows users to search for specific data within a PostgreSql database.
 - The application provides a user-friendly interface using Windows Forms for easy interaction.
 - Search results are displayed in a clear and organized manner.
 - Users can save search queries for future reference.
 
-##Installation
+## Installation
 To install and run SearchWork, follow these steps:
 
 1) Clone the repository to your local machine.
@@ -22,7 +22,7 @@ nuget install
 4) Configure the database connection. Update the database connection settings in the application's configuration file to match your PostgreSql database. The configuration file can typically be found in the app.config or web.config file.
 5) Run the application. Execute the built application to start using SearchWork.
 
-##Usage
+## Usage
 1) Once you have the SearchWork application up and running, follow these steps to use it effectively:
 2) Launch the SearchWork application from your desktop.
 3) Sign in to the application using your credentials. If you don't have an account, you may need to create one.
@@ -33,8 +33,8 @@ nuget install
 8) You can save search queries for future reference by using the save feature.
 9) To exit the application, close the SearchWork window or use the provided exit option.
 
-##License
+## License
 SearchWork is released under the MIT License. Please see the LICENSE file for more details.
 
-##Contact
+## Contact
 If you have any questions, suggestions, or need assistance, feel free to contact the project maintainer at [nickbox99@inbox.ru](mailto:nickbox99@inbox.ru).
