@@ -100,18 +100,7 @@
     <Compile Include="Database\MilitaryRegistrationsSql.cs" />
     <Compile Include="Database\TypeOfApplicantsSql.cs" />
     <Compile Include="Database\UsersSql.cs" />
-    <Compile Include="EmployerAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployerAdd.Designer.cs">
-      <DependentUpon>EmployerAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EmployerEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployerEdit.Designer.cs">
-      <DependentUpon>EmployerEdit.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Database\VacanciesSql.cs" />
     <Compile Include="EmployerMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +119,11 @@
     <Compile Include="EmployerRegistration.Designer.cs">
       <DependentUpon>EmployerRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employers.cs">
+    <Compile Include="EmployerResponses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employers.Designer.cs">
-      <DependentUpon>Employers.cs</DependentUpon>
+    <Compile Include="EmployerResponses.Designer.cs">
+      <DependentUpon>EmployerResponses.cs</DependentUpon>
     </Compile>
     <Compile Include="GenderAdd.cs">
       <SubType>Form</SubType>
@@ -161,11 +150,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminMenu.cs">
+    <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminMenu.Designer.cs">
-      <DependentUpon>AdminMenu.cs</DependentUpon>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="MilitaryRegistrationAdd.cs">
       <SubType>Form</SubType>
@@ -187,6 +176,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponsesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResponsesView.Designer.cs">
+      <DependentUpon>ResponsesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="TypeOfApplicantAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,12 +218,18 @@
     <Compile Include="UserRegistration.Designer.cs">
       <DependentUpon>UserRegistration.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EmployerAdd.resx">
-      <DependentUpon>EmployerAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployerEdit.resx">
-      <DependentUpon>EmployerEdit.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="VacanciesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VacanciesAdd.Designer.cs">
+      <DependentUpon>VacanciesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VacanciesEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VacanciesEdit.Designer.cs">
+      <DependentUpon>VacanciesEdit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EmployerMenu.resx">
       <DependentUpon>EmployerMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,8 +239,8 @@
     <EmbeddedResource Include="EmployerRegistration.resx">
       <DependentUpon>EmployerRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employers.resx">
-      <DependentUpon>Employers.cs</DependentUpon>
+    <EmbeddedResource Include="EmployerResponses.resx">
+      <DependentUpon>EmployerResponses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenderAdd.resx">
       <DependentUpon>GenderAdd.cs</DependentUpon>
@@ -253,8 +254,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminMenu.resx">
-      <DependentUpon>AdminMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MilitaryRegistrationAdd.resx">
       <DependentUpon>MilitaryRegistrationAdd.cs</DependentUpon>
@@ -273,7 +274,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResponsesView.resx">
+      <DependentUpon>ResponsesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TypeOfApplicantAdd.resx">
       <DependentUpon>TypeOfApplicantAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +297,12 @@
     <EmbeddedResource Include="UserRegistration.resx">
       <DependentUpon>UserRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VacanciesAdd.resx">
+      <DependentUpon>VacanciesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VacanciesEdit.resx">
+      <DependentUpon>VacanciesEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -302,6 +313,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="sql\vacancies.txt" />
+    <Content Include="sql\responses.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
