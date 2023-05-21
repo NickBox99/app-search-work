@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SearchWork
 {
-    public partial class Main : Form
+    public partial class AdminMenu : Form
     {
-        public Main()
+        public AdminMenu()
         {
             InitializeComponent();
         }
